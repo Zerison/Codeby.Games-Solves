@@ -1,7 +1,7 @@
 import requests
 from itertools import product
 
-TARGET_URL = "http://62.173.140.174:16060"
+TARGET_URL = "http://url"
 ADMIN_USER = "admin"
 
 # 1. Запускаем процесс сброса
