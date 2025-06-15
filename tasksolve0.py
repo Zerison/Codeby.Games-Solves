@@ -1,3 +1,5 @@
+# для решения таска с категории Веб "Тетрис"
+
 import requests
 from itertools import product
 
