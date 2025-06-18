@@ -3,7 +3,7 @@
 import requests
 from itertools import product
 
-TARGET_URL = "http://url"
+TARGET_URL = "http://TASK_URL"
 ADMIN_USER = "admin"
 
 # 1. Запускаем процесс сброса
